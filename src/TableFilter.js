@@ -1,13 +1,31 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-//import FilterList from "./FilterList";
 
 const TableFilter = () => {
   const [data, setData] = useState([]);
   const [val, setVal] = useState("");
   const [val2, setVal2] = useState("");
 
+  const postData = () => {
+    axios
+      .post(`https://fakestoreapi.com/products`, {
+        id: 21,
+        title: "test product",
+        price: 13.5,
+        description: "lorem ipsum set",
+        image: "https://i.pravatar.cc",
+        category: "electronic",
+        rating: { rate: 3.9, count: 145 },
+      })
+      .then((res) => {
+        //data.push(res);
+        //console.log(data);
+        console.log(res.data);
+      });
+  };
+
   const getData = async () => {
+    postData();
     await axios
       .get(`https://fakestoreapi.com/products`)
       .then((response) => setData(response.data));
@@ -28,7 +46,7 @@ const TableFilter = () => {
     <div className="d-flex">
       <div className="filter-table">
         <h1 className="filter-title">Filter Table</h1>
-        <form action="/form/submit" method="post">
+        <form>
           <div className="filter-container">
             <label className="input-label">From: </label>
             <input
@@ -45,6 +63,7 @@ const TableFilter = () => {
               type="number"
             />
           </div>
+          <button>Post new data</button>
         </form>
       </div>
       <table className="product-table">

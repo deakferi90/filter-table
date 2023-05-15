@@ -46,6 +46,7 @@
 .product-table {
   border-collapse: collapse;
   width: 75%;
+  height: fit-content;
 }
 
 .products {
