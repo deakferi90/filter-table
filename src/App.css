@@ -32,7 +32,68 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.product-img {
+  width: 200px;
+  height: auto;
+}
+
+.product-table {
+  border-collapse: collapse;
+  width: 75%;
+}
+
+.products {
+  border: 1px solid purple;
+  width: 25%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.filter-table {
+  border-radius: 20px;
+  width: 25%;
+  height: 350px;
+  background: cyan;
+  margin-top: 20%;
+  margin: 20% 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-right: 20px;
+  padding-top: 40px;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.input-label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
+
+.input-field {
+  padding: 10px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 10px;
+  background: yellow;
+
+}
+
+.filter-title {
+  text-align: center;
+  width: 100%;
 }
