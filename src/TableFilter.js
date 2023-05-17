@@ -18,8 +18,6 @@ const TableFilter = () => {
         rating: { rate: 3.9, count: 145 },
       })
       .then((res) => {
-        //data.push(res);
-        //console.log(data);
         console.log(res.data);
       });
   };
