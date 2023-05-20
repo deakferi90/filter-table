@@ -38,17 +38,6 @@ const TableFilter = () => {
     }
   };
 
-  // const reducedArray = data.reduce((accumulator, currentObject) => {
-  //   accumulator.push(currentObject.title); // Replace 'property' with the actual property name you want to extract
-  //   return accumulator.sort();
-  // }, []);
-
-  // console.log(reducedArray);
-  // const sortTableByProperty = () => {
-  //   const reducedArray = data.map((object) => object.title).sort();
-  //   console.log(data);
-  // };
-
   const sortTableByProperty = (property) => {
     const sortedData = [...data].sort((a, b) => {
       if (a[property] < b[property]) {
@@ -68,9 +57,6 @@ const TableFilter = () => {
     getData();
   }, []);
 
-  // useEffect(() => {
-  //   setData(sorted);
-  // }, []);
   return (
     <div className="d-flex">
       <div className="filter-table">
