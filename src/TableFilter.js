@@ -5,6 +5,7 @@ const TableFilter = () => {
   const [data, setData] = useState([]);
   const [val, setVal] = useState("");
   const [val2, setVal2] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const postData = () => {
     axios
@@ -37,9 +38,39 @@ const TableFilter = () => {
     }
   };
 
+  // const reducedArray = data.reduce((accumulator, currentObject) => {
+  //   accumulator.push(currentObject.title); // Replace 'property' with the actual property name you want to extract
+  //   return accumulator.sort();
+  // }, []);
+
+  // console.log(reducedArray);
+  // const sortTableByProperty = () => {
+  //   const reducedArray = data.map((object) => object.title).sort();
+  //   console.log(data);
+  // };
+
+  const sortTableByProperty = (property) => {
+    const sortedData = [...data].sort((a, b) => {
+      if (a[property] < b[property]) {
+        return sortOrder === "asc" ? -1 : 1;
+      }
+      if (a[property] > b[property]) {
+        return sortOrder === "asc" ? 1 : -1;
+      }
+      return 0;
+    });
+
+    setData(sortedData);
+    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+  };
+
   useEffect(() => {
     getData();
   }, []);
+
+  // useEffect(() => {
+  //   setData(sorted);
+  // }, []);
   return (
     <div className="d-flex">
       <div className="filter-table">
@@ -64,6 +95,12 @@ const TableFilter = () => {
           <button>Post new data</button>
         </form>
       </div>
+      <button
+        onClick={() => sortTableByProperty("title")}
+        className="sort-table"
+      >
+        Sort table by title
+      </button>
       <table className="product-table">
         <thead>
           <tr>

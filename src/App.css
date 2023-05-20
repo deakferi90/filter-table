@@ -98,3 +98,16 @@
   text-align: center;
   width: 100%;
 }
+
+.sort-table {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.sort-table:hover {
+  cursor: pointer;
+}
