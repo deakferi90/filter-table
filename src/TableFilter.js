@@ -95,12 +95,20 @@ const TableFilter = () => {
           <button>Post new data</button>
         </form>
       </div>
-      <button
-        onClick={() => sortTableByProperty("title")}
-        className="sort-table"
-      >
-        Sort table by title
-      </button>
+      <div>
+        <button
+          onClick={() => sortTableByProperty("title")}
+          className="sort-table"
+        >
+          Sort table by title
+        </button>
+        <button
+          onClick={() => sortTableByProperty("price")}
+          className="sort-table"
+        >
+          Sort table by price
+        </button>
+      </div>
       <table className="product-table">
         <thead>
           <tr>
